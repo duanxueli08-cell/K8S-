@@ -4434,7 +4434,7 @@ metadata:
   name: nfs-client-provisioner
   # replace with namespace where provisioner is deployed
   #namespace: default
-  namespace: sc-nfs
+  namespace: sc-nfs 
 ---
 kind: ClusterRole
 apiVersion: rbac.authorization.k8s.io/v1
@@ -4557,7 +4557,7 @@ spec:
 eof
 
 kubectl apply -f nfs-client-provisioner.yaml
-kubectl get deployments.apps
+kubectl get deployments.apps -A
 kubectl get pod -A
 # 注意:如果失败,检查是否worker节点安装了nfs-client
 ```
@@ -4578,7 +4578,7 @@ parameters:
 eof
 
 kubectl apply -f nfs-StorageClass.yaml
-kubectl get sc
+kubectl get sc -A
 ```
 
 创建 PVC
@@ -6443,4 +6443,100 @@ spec:
     interval: 15s
 eof
 ```
+
+
+
+
+
+# Helm
+
+官方网址：[舵手](https://helm.sh/)
+
+插件：https://artifacthub.io/packages/search?kind=6
+
+相关概念
+
+Helm 3 的变化
+
+### 安装部署
+
+```powershell
+wget https://get.helm.sh/helm-v4.0.4-linux-amd64.tar.gz
+tar xf helm-v4.0.4-linux-amd64.tar.gz  -C /usr/local/
+ls /usr/local/linux-amd64/
+ln -s /usr/local/linux-amd64/helm /usr/local/bin/
+ldd /usr/local/bin/helm
+# Helm命令补会,重新登录生效
+helm completion bash > /etc/bash_completion.d/helm && exit
+```
+
+### 指令
+
+```powershell
+# 添加远程仓库并命名,如下示例
+helm repo add bitnami https://charts.bitnami.com/bitnami
+helm repo add ingress-nginx https://kubernetes.github.io/ingress-nginx
+helm repo add myharbor https://harbor.wangxiaochun.com/chartrepo/myweb --username admin --password 123456
+```
+
+```powershell
+# 查看本地配置的仓库
+helm repo list
+helm list
+# 从 hub 官方仓库搜索 Mysql
+helm search hub mysqls
+# 从本地配置的仓库地址去搜 Mysql
+helm search repo mysql
+# 从本地配置的仓库地址去搜指定版本的 Mysql （注意：这个版本号是 Chart）
+helm search repo mysql --versions 10.3.0
+# 添加一个 Chart 仓库，生成的仓库配置内容存放在 ~/.config/helm/repositories.yaml 文件中；URL 链接就在该文件中定义的！
+tree ~/.config
+# 拉取文件
+helm pull oci://registry-1.docker.io/bitnamicharts/mysqls
+```
+
+```powershell
+# 更新仓库,相当于apt update
+helm repo update
+# 删除仓库
+helm remove 仓库名
+```
+
+### 案例：安装 MySQL 8.0
+
+默认配置了魔法！
+
+StorageClass 类型存储参考之前的笔记；
+
+作为运维工程师，我们不建议直接 `helm install`，而是先拉取配置，改好了再上线。
+
+在 Kubernetes (K8s) 环境下，部署 MySQL 的“工业标准”通常是使用 **Bitnami** 提供的 Helm Chart。它封装得非常好，安全且易于扩展。
+
+```powershell
+# 添加并更新仓库
+helm repo add bitnami https://charts.bitnami.com/bitnami
+helm repo update
+# 查看
+helm repo list
+# 应用
+helm install mysql bitnami/mysql --version 10.3.0 --set primary.persistence.storageClass=sc-nfs
+
+回退
+helm uninstall mysql
+kubectl delete pvc data-mysql-0
+kubectl get pvc,pod
+```
+
+注意事项：
+
+- #### 安装时必须指定存储卷，否则会处于 Pending 状态；
+
+  - 如果指定了默认的storageClass，可以不提定primary.persistence.storageClass=sc-nfs
+    helm install mysql bitnami/mysql --version 10.3.0 --set primary.persistence.storageClass=sc-nfs
+
+- MySQL 8.0 的密码插件问题
+
+- MySQL 是内存大户。在 `values.yaml` 里一定要限制 `resources.limits.memory`
+
+
 
