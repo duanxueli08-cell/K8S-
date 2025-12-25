@@ -107,6 +107,11 @@ desktop.ini
 ```
 
 
+切换连接方式 ; SSH —— HTTPS
+```
+git remote set-url origin https://github.com/duanxueli08-cell/K8S-.git
+```
+
 # 安装 Template  插件
 
 🛠️ SRE 生产力工具配置：Templater 自动化笔记指南
@@ -197,6 +202,8 @@ desktop.ini
         
 ```
 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
+```
+
 ```
 #### 第三步：PicGo 联动 (The Configuration)
 
