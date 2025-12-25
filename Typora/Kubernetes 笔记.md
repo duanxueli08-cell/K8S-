@@ -6625,6 +6625,9 @@ helm install mysql --version 10.3.0 \
 oci://registry-1.docker.io/bitnamicharts/mysql \
 -n wordpress --create-namespace
 
-
+MYSQL_ROOT_PASSWORD=$(kubectl get secret --namespace wordpress mysql -o jsonpath="{.data.mysql-root-password}" | base64 -d)
+kubectl run mysql-client --rm --tty -i --restart='Never' --image  registry.cn-beijing.aliyuncs.com/wangxiaochun/bitnami-mysql:8.0.37-debian-12-r --namespace wordpress --env MYSQL_ROOT_PASSWORD=$MYSQL_ROOT_PASSWORD --command -- bash
+mysql -h mysql-primary.wordpress.svc.cluster.local -uroot -p"$MYSQL_ROOT_PASSWORD"
+mysql -h mysql-secondary.wordpress.svc.cluster.local -uroot -p"$MYSQL_ROOT_PASSWORD"
 ```
 
