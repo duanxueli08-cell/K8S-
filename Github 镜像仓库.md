@@ -42,9 +42,12 @@ GitHub 的镜像并不在代码文件列表里。它是通过 **GitHub Packages*
 
 - 访问路径：`https://github.com/duanxueli08-cell?tab=packages`
     
+- 推送路径：`docker pull ghcr.io/duanxueli08-cell/my-mysql:8.4`
+    
 - 拉取路径：`docker pull ghcr.io/duanxueli08-cell/my-mysql:8.4`
 
 
+## Chart
 官方网址：https://hub.docker.com/
 查询 bitnami chart 对应的镜像版本 
 - 比如说我想用 MySQL 8.4 ，那么对应的 Chart 版本就是 11.0.0 或 11.1.0 或 11.1.1 等
@@ -69,9 +72,9 @@ helm pull oci://registry-1.docker.io/bitnamicharts/mysql --version 11.0.0
     repository: duanxueli08-cell/mysql
     tag: 8.4
 # 打包
+tar -czf mysql-11.0.0.tgz mysql/
 
-
-helm push mysql-11.0.0.tgz oci://duanxueli08-cell/my-k8s-charts
+# 上传
 helm push mysql-11.0.0.tgz oci://ghcr.io/duanxueli08-cell/mysql
 # 下载
 helm pull oci://ghcr.io/duanxueli08-cell/charts/my-k8s-charts
