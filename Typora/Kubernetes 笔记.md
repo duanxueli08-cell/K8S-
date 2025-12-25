@@ -6482,7 +6482,6 @@ helm repo add myharbor https://harbor.wangxiaochun.com/chartrepo/myweb --usernam
 ```powershell
 # 查看本地配置的仓库
 helm repo list
-helm list
 # 从 hub 官方仓库搜索 Mysql
 helm search hub mysqls
 # 从本地配置的仓库地址去搜 Mysql
@@ -6526,7 +6525,6 @@ kubectl get po
 kubectl describe po mysql-0   
 回退
 helm uninstall mysql && kubectl delete pvc data-mysql-0 && kubectl get pvc,pod
-
 ```
 
 注意事项：
