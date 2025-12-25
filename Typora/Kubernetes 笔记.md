@@ -29,11 +29,11 @@
 >   - pod：k8s 中最小的计算单元，包含一个或多个容器；这些容器共享存储和网络，通常部署在同一节点上。
 >   - kube-proxy：负责在每个 Worker 节点上维护网络规则，管理 Pod 间的网络通信。它确保 Pod 能够通过虚拟 IP 地址与集群中的其他 Pod 通信。
 
-![image-20251210152011740](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20251210152011740.png)
+![image-20251210152011740](https://raw.githubusercontent.com/duanxueli08-cell/Obsidian-Images/main/img/image-20251210152011740.png)
 
 
 
-![image-20251210095515555](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20251210095515555.png)
+![image-20251210095515555](https://raw.githubusercontent.com/duanxueli08-cell/Obsidian-Images/main/img/image-20251210095515555.png)
 
 #### 基于 Docker 安装
 
@@ -1758,7 +1758,7 @@ Selector 一旦创建，不能改；改了 = 重建资源
   - Mount和User是不共享的,每个容器有独立的Mount,User的名称空间
   - PID名称空间也可以共享，但需要用户显式定义；
 
-![image-20251211193304830](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20251211193304830.png)
+![image-20251211193304830](https://raw.githubusercontent.com/duanxueli08-cell/Obsidian-Images/main/img/image-20251211193304830.png)
 
 ##### 口述：
 
@@ -3426,7 +3426,7 @@ kubectl apply -f ingress-duan.yaml && kubectl get ingress
 
 效果图：
 
-![image-20251221144745437](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20251221144745437.png)
+![image-20251221144745437](https://raw.githubusercontent.com/duanxueli08-cell/Obsidian-Images/main/img/image-20251221144745437.png)
 
 
 
@@ -4180,9 +4180,9 @@ spec:                           # 【核心规格】定义你期望的状态
 
 #### PV 和 PVC 
 
-![image-20251218162459707](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20251218162459707.png)
+![image-20251218162459707](https://raw.githubusercontent.com/duanxueli08-cell/Obsidian-Images/main/img/image-20251218162459707.png)
 
-![image-20251218162512918](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20251218162512918.png)
+![image-20251218162512918](https://raw.githubusercontent.com/duanxueli08-cell/Obsidian-Images/main/img/image-20251218162512918.png)
 
 PV 状态
 
@@ -4791,7 +4791,7 @@ Secret 的三大核心用法
 
 
 
-![image-20251219094822861](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20251219094822861.png)
+![image-20251219094822861](https://raw.githubusercontent.com/duanxueli08-cell/Obsidian-Images/main/img/image-20251219094822861.png)
 
 
 
@@ -6736,9 +6736,9 @@ helm show chart harbor	=	cat harbor/Chart.yaml
 
 
 
+![image-20251225201308138](https://raw.githubusercontent.com/duanxueli08-cell/Obsidian-Images/main/img/image-20251225201308138.png)
 
 
 
 
-   
 
