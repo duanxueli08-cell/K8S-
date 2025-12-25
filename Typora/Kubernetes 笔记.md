@@ -6501,30 +6501,86 @@ helm repo update
 helm remove 仓库名
 ```
 
-### 案例：安装 MySQL 8.0
+### 案例：安装单机 MySQL 8.0
 
 默认配置了魔法！
 
-StorageClass 类型存储参考之前的笔记；
+**StorageClass 类型存储参考之前的笔记**；
 
 作为运维工程师，我们不建议直接 `helm install`，而是先拉取配置，改好了再上线。
 
 在 Kubernetes (K8s) 环境下，部署 MySQL 的“工业标准”通常是使用 **Bitnami** 提供的 Helm Chart。它封装得非常好，安全且易于扩展。
 
 ```powershell
+# 添加 StorageClass 存储类，名称：sc-nfs
 # 添加并更新仓库
 helm repo add bitnami https://charts.bitnami.com/bitnami
 helm repo update
-# 查看
 helm repo list
-# 应用
+# 下载 chart 包
+helm pull bitnami/mysql --version 10.3.0
+tar xf mysql-10.3.0.tgz && cd mysql && ls
+# 安装 （ 拉不下来 ）
 helm install mysql bitnami/mysql --version 10.3.0 --set primary.persistence.storageClass=sc-nfs
-helm install mysql bitnami/mysql --version 11.0.0 --set primary.persistence.storageClass=sc-nfs	
+# 清空，我来助你！！！
+helm install mysql bitnami/mysql --version 10.3.0 \
+  --set primary.persistence.storageClass=sc-nfs \
+  --set image.registry=registry.cn-beijing.aliyuncs.com \
+  --set image.repository=wangxiaochun/bitnami-mysql \
+  --set image.tag=8.0.37-debian-12-r
+下载完成后保存界面信息
+# 查看密码 （相关信息在下载后的界面信息中显示）
+kubectl get secret --namespace default mysql -o jsonpath="{.data.mysql-root-password}" | base64 -d
+# 定义密码变量
+MYSQL_ROOT_PASSWORD=$(kubectl get secret --namespace default mysql -o jsonpath="{.data.mysql-root-password}" | base64 -d)
+# 测试启动
+kubectl run mysql-client --rm --tty -i --restart='Never' --image  registry.cn-beijing.aliyuncs.com/wangxiaochun/bitnami-mysql:8.0.37-debian-12-r --namespace default --env MYSQL_ROOT_PASSWORD=$MYSQL_ROOT_PASSWORD --command -- bash
+mysql -h mysql.default.svc.cluster.local -uroot -p"$MYSQL_ROOT_PASSWORD"
+或者通过无头服务访问
+mysql -h mysql-headless.default.svc.cluster.local -uroot -p"$MYSQL_ROOT_PASSWORD"
+```
+
+```powershell
 # 查看
-kubectl get po
+kubectl get po,pvc,svc,sts,cm
 kubectl describe po mysql-0   
-回退
-helm uninstall mysql && kubectl delete pvc data-mysql-0 && kubectl get pvc,pod
+回退 （没问题，别动这个！）
+helm uninstall mysql && kubectl delete pvc data-mysql-0 && kubectl get pvc,pod && helm list
+# 扩展指令：移除远程仓库
+helm repo remove bitnami ingress-nginx && helm repo list
+```
+
+二选一
+
+```powershell
+# 添加 StorageClass 存储类，名称：sc-nfs
+# 添加并更新仓库
+helm repo add bitnami https://charts.bitnami.com/bitnami
+helm repo update && helm repo list
+# 指定值文件 values.yaml 内容实现定制 Release
+helm show values bitnami/mysql --version 10.3.0 > values.yaml
+vim values.yaml
+image:
+  registry: registry.cn-beijing.aliyuncs.com
+  repository: wangxiaochun/bitnami-mysql
+  tag: 8.0.37-debian-12-r
+auth:
+  rootPassword: "123123"
+  database: m65
+  username: duan
+  password: "234234"
+persistence:
+  storageClass: "sc-nfs"
+
+helm install mysql bitnami/mysql --version 10.3.0 -f values.yaml
+# 测试
+MYSQL_ROOT_PASSWORD=$(kubectl get secret --namespace default mysql -o jsonpath="{.data.mysql-root-password}" | base64 -d)
+kubectl run mysql-client --rm --tty -i --restart='Never' --image  registry.cn-beijing.aliyuncs.com/wangxiaochun/bitnami-mysql:8.0.37-debian-12-r --namespace default --env MYSQL_ROOT_PASSWORD=$MYSQL_ROOT_PASSWORD --command -- bash
+mysql -h mysql.default.svc.cluster.local -uroot -p123123
+show databases;
+exit
+mysql -h mysql.default.svc.cluster.local -uduan -p234234
+show databases;
 ```
 
 注意事项：
@@ -6539,4 +6595,36 @@ helm uninstall mysql && kubectl delete pvc data-mysql-0 && kubectl get pvc,pod
 - MySQL 是内存大户。在 `values.yaml` 里一定要限制 `resources.limits.memory`
 
 
+
+
+
+### 案例：MySQL 主从复制
+
+默认配置了魔法！
+
+**StorageClass 类型存储参考之前的笔记**；
+
+```powershell
+# 添加 StorageClass 存储类，名称：sc-nfs
+# 添加并更新仓库
+helm repo add bitnami https://charts.bitnami.com/bitnami
+helm repo update && helm repo list
+
+方法一：通过仓库
+
+方法二：通过OCI协议一键安装
+helm install mysql --version 10.3.0 \
+--set auth.rootPassword='P@ssw0rd' \
+--set global.storageClass=sc-nfs \
+--set auth.database=wordpress \
+--set auth.username=wordpress \
+--set auth.password='P@ssw0rd' \
+--set architecture=replication \
+--set secondary.replicaCount=1 \
+--set auth.replicationPassword='P@ssw0rd' \
+oci://registry-1.docker.io/bitnamicharts/mysql \
+-n wordpress --create-namespace
+
+
+```
 
