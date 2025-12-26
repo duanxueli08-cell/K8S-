@@ -1,5 +1,5 @@
 {
-  "userId": "7d14f1b8-371b-42c0-86a6-760a45da4a17",
+  "userId": "5b70f283-9b33-41e3-a304-09af0abd760a",
   "isPlusUser": false,
   "plusLicenseKey": "",
   "openAIApiKey": "",
@@ -13,7 +13,7 @@
   "azureOpenAIApiVersion": "",
   "azureOpenAIApiEmbeddingDeploymentName": "",
   "googleApiKey": "AIzaSyBqkoyI_2cAiTEGS6rQrrBnJuhJcf_pkJM",
-  "openRouterAiApiKey": "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",
+  "openRouterAiApiKey": "",
   "xaiApiKey": "",
   "mistralApiKey": "",
   "deepseekApiKey": "",
@@ -21,7 +21,7 @@
   "amazonBedrockRegion": "",
   "siliconflowApiKey": "",
   "defaultChainType": "llm_chain",
-  "defaultModelKey": "google/gemini-2.5-flash|openrouterai",
+  "defaultModelKey": "gemini-2.5-flash|google",
   "embeddingModelKey": "text-embedding-3-small|openai",
   "temperature": 0.1,
   "maxTokens": 6000,
@@ -200,8 +200,7 @@
       "capabilities": [
         "vision"
       ],
-      "displayName": "gemini-2.5",
-      "temperature": 0.1
+      "enableCors": true
     },
     {
       "name": "gemini-2.5-flash-lite",
@@ -247,15 +246,15 @@
     {
       "name": "deepseek-ai/DeepSeek-V3",
       "provider": "siliconflow",
-      "enabled": false,
-      "isBuiltIn": true,
+      "enabled": true,
+      "isBuiltIn": false,
       "baseUrl": "https://api.siliconflow.com/v1"
     },
     {
       "name": "deepseek-ai/DeepSeek-R1",
       "provider": "siliconflow",
-      "enabled": false,
-      "isBuiltIn": true,
+      "enabled": true,
+      "isBuiltIn": false,
       "baseUrl": "https://api.siliconflow.com/v1",
       "capabilities": [
         "reasoning"
@@ -365,7 +364,7 @@
   "enableCustomPromptTemplating": true,
   "enableSemanticSearchV3": false,
   "enableLexicalBoosts": true,
-  "suggestedDefaultCommands": true,
+  "suggestedDefaultCommands": false,
   "autonomousAgentMaxIterations": 4,
   "autonomousAgentEnabledToolIds": [
     "localSearch",
