@@ -1,17 +1,4 @@
-# Kubernetes 部署
-
-## 概念：
-
-> - container（容器）本质是： **Linux 进程 + 隔离 + 资源限制**；（一个被 Namespace 隔离、被 Cgroup 限制的一组进程）
->   - Kubernetes 本身并不直接创建容器，
->      容器运行时（containerd / CRI-O）
->      基于 **Linux Namespace 实现进程隔离，
->      基于 Cgroup 实现资源限制与调度，
->      Pod 只是对这一组容器的抽象封装。**
->   - containerd 管容器
->      runc 生容器
->      container 是进程
->   - K8s 本身不跑容器，它通过 CRI 调用 containerd
+<errorChunk>401 User not found.</errorChunk>
 
 
 

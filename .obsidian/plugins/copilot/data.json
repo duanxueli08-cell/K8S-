@@ -199,7 +199,9 @@
       "projectEnabled": true,
       "capabilities": [
         "vision"
-      ]
+      ],
+      "displayName": "gemini-2.5",
+      "temperature": 0.1
     },
     {
       "name": "gemini-2.5-flash-lite",
@@ -246,14 +248,14 @@
       "name": "deepseek-ai/DeepSeek-V3",
       "provider": "siliconflow",
       "enabled": false,
-      "isBuiltIn": false,
+      "isBuiltIn": true,
       "baseUrl": "https://api.siliconflow.com/v1"
     },
     {
       "name": "deepseek-ai/DeepSeek-R1",
       "provider": "siliconflow",
       "enabled": false,
-      "isBuiltIn": false,
+      "isBuiltIn": true,
       "baseUrl": "https://api.siliconflow.com/v1",
       "capabilities": [
         "reasoning"
