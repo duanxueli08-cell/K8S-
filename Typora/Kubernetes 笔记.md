@@ -6751,12 +6751,14 @@ type: application
 version: 1.2.3
 appVersion: "6.6.6"
 
+# 修改 values.yaml
 vim mychart/values.yaml
 NAME: "wangxiaochun"
 USER:
   AGE: "18"
   CITY: "beijing"
 
+# 修改 templates.yaml
 vim mychart/templates/configmap.yaml
 apiVersion: v1
 kind: ConfigMap
@@ -6786,13 +6788,11 @@ data:
     
 # 模拟运行
 helm install myapp ./mychart -n demo --create-namespace --debug --dry-run
-
-
-
-
+# 定制环境安装；启动时修改 values 变量 
+helm install myapp ./mychart -n demo --create-namespace --debug --dry-run --set USER.AGE=28,NAME=M65
 ```
 
 
 
-![image-20251225212527961](https://raw.githubusercontent.com/duanxueli08-cell/Obsidian-Images/main/img/image-20251225212527961.png)
+
 
