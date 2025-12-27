@@ -2262,7 +2262,7 @@ APIServer：
 
 
 
-# 工作负载
+# 控制管理
 
 controller-manager 里面跑着很多控制循环（controller loop）：
 
