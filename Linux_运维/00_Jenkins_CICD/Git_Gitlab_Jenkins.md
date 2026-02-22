@@ -184,7 +184,8 @@ https://packages.gitlab.com/gitlab/gitlab-ce
 # 通过软件源（清华）下载和安装
 wget https://mirrors.tuna.tsinghua.edu.cn/gitlab-ce/ubuntu/pool/noble/main/g/gitlab-ce/gitlab-ce_18.5.2-ce.0_amd64.deb
 dpkg -i gitlab-ce_18.5.2-ce.0_amd64.deb
-
+# 查看版本信息
+cat /opt/gitlab/embedded/service/gitlab-rails/VERSION
 ```
 
 #### 基础配置
