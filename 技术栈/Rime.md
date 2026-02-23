@@ -96,7 +96,6 @@ https://github.com/amzxyz/RIME-LMDG/releases/download/LTS/wanxiang-lts-zh-hans.g
 https://github.com/amzxyz/RIME-LMDG/releases/download/tool/wanxiang-tools.exe
 
 # 我下载安装时没有用到这个，但如是你不会安装，也看不懂我这个安装笔记，那就用这个工具吧！
-# 若是工具都不会用，网上的学习资料也看不懂，还是不要用这个输入法了！我不是阴阳怪气骂人啊！每个人各有所长各有所短，这个输入法确实不适合你，微软 卡饭 手心 QQ 等输入法也不错的！
 ```
 
 ##### 输入法设定
@@ -119,3 +118,11 @@ https://github.com/amzxyz/RIME-LMDG/releases/download/tool/wanxiang-tools.exe
 
 - 然后等待部署完成！就是这个漏斗图标出现，消失后就说明部署完成！
 ![image.png](https://raw.githubusercontent.com/duanxueli08-cell/Obsidian-Images/main/img/20260222134654600.png)
+
+
+
+## 后续评论
+
+用了几天了，也就刚开始时感到非常好用，主要是当时用全拼打字，后来改为小鹤双拼后，发现有些字打不出来，翻页也找不到！
+当时还以为哪里没敲对，问了一下 AI ，我敲的没问题！于是我下载了微信输入法，切换到小鹤双拼后，能敲出对应的汉字了！
+小狼毫我是不推荐了！那些 yaml 文件还需要自定义的调整，太累了，我放弃！
