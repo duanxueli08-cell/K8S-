@@ -730,7 +730,7 @@ apt update && apt install -y docker.io
 vi /etc/docker/daemon.json 
     {
       "registry-mirrors": ["https://docker.m.daocloud.io","https://docker.1panel.live","https://docker.1ms.run","https://docker.xuanyuan.me"],
-      "insecure-registries": ["harbor.wang.org"]
+      "insecure-registries": ["harbor.duan.org"]
      }
 systemctl  restart docker
 docker info
