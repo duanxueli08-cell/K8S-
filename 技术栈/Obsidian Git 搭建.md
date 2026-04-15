@@ -36,6 +36,9 @@ ssh-keygen -t ed25519 -C "duanxueli08@gmail.com"
 查看公钥，把公钥交给 GitHub （SSH and GPG keys 页面）
 cat ~/.ssh/id_ed25519.pub
 
+# 如果需要可以自定义密钥
+ssh-keygen -t ed25519 -f C:\Users\Administrator\.ssh\id_Economics -C "duanxueli08@gmail.com"
+cat ~/.ssh/id_Economics.pub
 
 修改远程仓库地址（关键的“回退”/切换）
 # 格式：git remote set-url origin git@github.com:用户名/仓库名.git
