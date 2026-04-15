@@ -24,6 +24,7 @@ git config --global user.email "17777055510@163.com"
 
 连接远程库 
 git remote add origin https://github.com/duanxueli08-cell/K8S-.git
+
 ```
 
 由于没有了解清楚，导致需要切换连接仓库类型！所以推荐 SSH 
