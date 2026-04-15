@@ -7,5 +7,6 @@
   "vimMode": false,
   "attachmentFolderPath": "/",
   "newFileLocation": "root",
-  "autoConvertHtml": false
+  "autoConvertHtml": false,
+  "openBehavior": ""
 }
