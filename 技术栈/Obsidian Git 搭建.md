@@ -151,27 +151,38 @@ git@gitee.com:duanxueli/Diary.git
 将两个地址绑定到同一个 origin
 > 默认情况下，本地仓库有一个名为 origin 的远端配置，它目前只指向 GitHub。我们要做的，就是给这个 origin 增加一个“推送目标”。
 
-```
+```python
 # 打开终端并进入你的仓库目录
 cd "C:\Program Files\Obsidian\data\Obsidian_Vault"
 
 # 查看当前的远端设置
 git remote -v
 
-PS C:\Program Files\Obsidian\data\Obsidian_Vault>  git remote -v
-origin  git@github.com:duanxueli08-cell/K8S-.git (fetch)
-origin  git@github.com:duanxueli08-cell/K8S-.git (push)
-PS C:\Program Files\Obsidian\data\Obsidian_Vault>
-
 # 在 Git 中，如果你想给一个 remote（即 origin）添加多个 push 地址，你需要先把原来的地址显式地添加一次，然后再添加新的地址。
-# 在终端中依次运行以下两行命令（请务必将尖括号 < > 里的内容替换为你自己真实的仓库地址）：
-# 第一步：重新添加 GitHub 为推送地址
+
+# 第一步：进入目录
+cd 'C:\Program Files\Obsidian\data\Obsidian_Vault\'
+# 第二步：重新添加 GitHub 为推送地址
 git remote set-url --add --push origin git@github.com:duanxueli08-cell/K8S-.git
 # 第二步：添加 Gitee 为第二个推送地址
-git remote set-url --add --push origin git@gitee.com:duanxueli/Diary.git
+git remote set-url --add --push origin git@gitee.com:duanxueli/Study.git
 # 验证是否成功
 git remote -v
+# 强推
+git push origin main -f
+```
 
+```powershell
+# 另一个仓库
+cd 'C:\Program Files\Obsidian\data\Economics\'
+
+git remote set-url --add --push origin git@github.com:duanxueli08-cell/Economics.git 
+
+git remote set-url --add --push origin git@gitee.com:duanxueli/Diary.git
+
+git remote -v
+
+git push origin main -f
 ```
 
 SSH
