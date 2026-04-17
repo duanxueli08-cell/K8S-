@@ -135,6 +135,69 @@ desktop.ini
 git remote set-url origin https://github.com/duanxueli08-cell/K8S-.git
 ```
 
+## 后续
+
+> 像在 Obsidian 里点击“上传（Push）”按钮时，代码会同时推送到 GitHub 和 Gitee
+
+```
+GitHub 地址示例:
+git@github.com:duanxueli08-cell/K8S-.git
+
+Gitee 地址示例: 
+git@gitee.com:duanxueli/Diary.git
+
+```
+
+将两个地址绑定到同一个 origin
+> 默认情况下，本地仓库有一个名为 origin 的远端配置，它目前只指向 GitHub。我们要做的，就是给这个 origin 增加一个“推送目标”。
+
+```
+# 打开终端并进入你的仓库目录
+cd "C:\Program Files\Obsidian\data\Obsidian_Vault"
+
+# 查看当前的远端设置
+git remote -v
+
+PS C:\Program Files\Obsidian\data\Obsidian_Vault>  git remote -v
+origin  git@github.com:duanxueli08-cell/K8S-.git (fetch)
+origin  git@github.com:duanxueli08-cell/K8S-.git (push)
+PS C:\Program Files\Obsidian\data\Obsidian_Vault>
+
+# 在 Git 中，如果你想给一个 remote（即 origin）添加多个 push 地址，你需要先把原来的地址显式地添加一次，然后再添加新的地址。
+# 在终端中依次运行以下两行命令（请务必将尖括号 < > 里的内容替换为你自己真实的仓库地址）：
+# 第一步：重新添加 GitHub 为推送地址
+git remote set-url --add --push origin git@github.com:duanxueli08-cell/K8S-.git
+# 第二步：添加 Gitee 为第二个推送地址
+git remote set-url --add --push origin git@gitee.com:duanxueli/Diary.git
+# 验证是否成功
+git remote -v
+
+```
+
+SSH
+```
+# 这是第一个仓库的公钥
+cat ~/.ssh/id_ed25519.pub
+# 这是第二个仓库的公钥
+cat ~/.ssh/id_Economics.pub
+```
+
+![image.png](https://raw.githubusercontent.com/duanxueli08-cell/Obsidian-Images/main/img/20260417203128842.png)
+
+```
+# 测试连接是否成功
+ssh -T git@gitee.com
+
+PS C:\Program Files\Obsidian\data\Obsidian_Vault> ssh -T git@gitee.com
+Hi duanxueli(@duanxueli)! You've successfully authenticated, but GITEE.COM does not provide shell access.
+```
+
+>若是第一次连接 Gitee，终端可能会提示类似 ：
+>Are you sure you want to continue connecting (yes/no)? 
+>的问题，输入 yes 并回车即可。
+
+
+
 # 安装 Template  插件
 
 🛠️ SRE 生产力工具配置：Templater 自动化笔记指南
