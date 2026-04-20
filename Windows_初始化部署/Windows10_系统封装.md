@@ -279,6 +279,14 @@ pause
 
 ### 下载安装顺序
 
+```powershell
+下载地址：
+https://pan.quark.cn/s/405fb584666c
+
+```
+
+
+
 #### 第一梯队
 
 > 尽量不要在微软商店下载软件，除非仅此一家！
@@ -337,6 +345,7 @@ winget
 # Foxmail
 # notepad--		# 或者 notepad++ 也行！
 # Typora
+# Bucd			# 这个……不好说啊！
 ```
 
 
@@ -349,10 +358,11 @@ winget
 	# git
 	# image auto upload
 # piclist
-
 ```
 
 
+
+#### 第四梯队
 
 ```powershell
 # EVC			# 一个便捷的录屏软件
@@ -372,6 +382,10 @@ winget
 # Snipaste		# 截屏软件
 # SwitchHosts （如果不干运维，估计 forever 用不上了！）
 # Game Cheats Manager
+# Mybase		# 这个装不装，看心情吧！
+# VMware
+# 图吧工具箱
+# Todesk		# 我是不用，可是有的人需要啊！唉……
 ```
 
 
