@@ -229,6 +229,35 @@ pause
 
 
 
+### 开通权限
+
+> 通过工具确定微软更新已经延迟、安全防护已经停止
+
+![image-20260420175528100](https://cdn.jsdelivr.net/gh/duanxueli08-cell/Obsidian-Images@main/img/image-20260420175528100.png)
+
+
+
+> 确定防火墙已经关闭；
+
+![image-20260420175742574](https://cdn.jsdelivr.net/gh/duanxueli08-cell/Obsidian-Images@main/img/image-20260420175742574.png)
+
+> 把那些没用的通知关闭；
+
+![image-20260420175905348](https://cdn.jsdelivr.net/gh/duanxueli08-cell/Obsidian-Images@main/img/image-20260420175905348.png)
+
+
+
+
+
+### 下载安装顺序
+
+#### 第一梯队
+
+```powershell
+# 微软商店
+	# 
+```
+
 
 
 
