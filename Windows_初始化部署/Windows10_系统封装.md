@@ -176,6 +176,14 @@ A
 
 
 
+### 文件管理
+
+![image-20260420180433016](https://cdn.jsdelivr.net/gh/duanxueli08-cell/Obsidian-Images@main/img/image-20260420180433016.png)
+
+
+
+
+
 ### 延迟更新
 
 推迟更新5年.bat
@@ -245,6 +253,10 @@ pause
 
 ![image-20260420175905348](https://cdn.jsdelivr.net/gh/duanxueli08-cell/Obsidian-Images@main/img/image-20260420175905348.png)
 
+![image-20260420180052033](https://cdn.jsdelivr.net/gh/duanxueli08-cell/Obsidian-Images@main/img/image-20260420180052033.png)
+
+
+
 
 
 
@@ -253,26 +265,94 @@ pause
 
 #### 第一梯队
 
+> 尽量不要在微软商店下载软件，除非仅此一家！
+>
+> 因为微软商店强制将软件下载到当前用户的 Appdate 文件夹下，对我来说，不方便管理！
+
 ```powershell
 # 微软商店
-	# 
+	# Windows Terminal
+	# 1Remote
+```
+
+winget
+
+> 这个其实没必要下载，但是若是下载，尽量更改默认安装路径！
+
+```powershell
+# 修改默认安装路径
+# 输入指令：winget settings 打开 winget 的配置文件 settings.json
+# 在这个 JSON 文件的大括号 {} 内部，添加或修改 installBehavior 字段，如下所示：
+{
+    "installBehavior": {
+        "preferences": {
+            "scope": "machine"
+        }
+    }
+}
+# 保存并关闭该文件。
+# 改完这个设置后，以后你使用 winget install 安装软件时，必须以“管理员身份”运行命令提示符或 PowerShell。
+
+---
+
+# 如果不想修改全局设置，也可以在每次安装时手动加上 --scope 参数：
+# 临时覆盖指令：winget install <软件名> --scope machine （或者简写为 -m）。
+```
+
+![image-20260420183634040](https://cdn.jsdelivr.net/gh/duanxueli08-cell/Obsidian-Images@main/img/image-20260420183634040.png)
+
+
+
+#### 第二梯队
+
+```powershell
+# 7z
+# clash
+# Python
+# git
+# Visual Studio Code
+# PotPlayer
+# localsend
+# sumatraPDF
+# bitwarden
+# 微信输入法
+# ContextMenuManager
+# XtraToolsPortable
+# Foxmail
 ```
 
 
 
+#### 第三梯队
+
+```powershell
+# Obsidian
+	# excalidraw
+	# git
+	# image auto upload
+# piclist
+
+```
 
 
 
-
-
-
-
-
-
-
-
-
-
+```powershell
+# UU远程
+# WindTerm
+# AOMEIBackupper
+# 火狐浏览器
+# ventoy
+# 语雀
+# WPS （专业改良版）
+# 夸克云盘
+# 阿里云盘
+# 天翼云盘
+# CE修改器
+# Telegram
+# BiliTools
+# Snipaste
+# SwitchHosts （如果不干运维，估计 forever 用不上了！）
+```
 
 
 
