@@ -115,7 +115,7 @@ dism /get-wiminfo /wimfile:F:\系统封装教程\install.wim /index:1
 
 要点／优点：
 
-- Windows Setup 启动后会读取并跳过“输入密钥”的界面（WillShowUI 控制是否显示 UI）。文档说明可用性：Microsoft Docs（WillShowUI／ProductKey）。([Microsoft Learn](https://learn.microsoft.com/en-us/windows-hardware/customize/desktop/unattend/microsoft-windows-setup-userdata-productkey-willshowui?utm_source=chatgpt.com))
+- Windows Setup 启动后会读取并跳过“输入密钥”的界面（WillShowUI 控制是否显示 UI）。文档说明可用性：Microsoft Docs（WillShowUI／ProductKey）。([Microsoft Learn](![image-20260420](https://learn.microsoft.com/en-us/windows-hardware/customize/desktop/unattend/microsoft-windows-setup-userdata-productkey-willshowui?utm_source=chatgpt.com))
 - 可以在 `specialize` 阶段再做更多自定义（如注入密钥、设置主机名等）。
 - 不会在安装时把非法密钥写入镜像；只是避免交互提示。安装后需用正确密钥激活。
 
@@ -150,7 +150,7 @@ Retail
 0
 ```
 
-**PID.txt**（放 `sources\PID.txt`）可以预先填写产品密钥（可选）。如果你不填任何 key，某些安装器/版本会允许跳过输入，但行为不一。MS 文档说明了 ei.cfg 与 PID.txt 的用途。([Microsoft Learn](https://learn.microsoft.com/en-us/windows-hardware/manufacture/desktop/windows-setup-edition-configuration-and-product-id-files--eicfg-and-pidtxt?view=windows-11&utm_source=chatgpt.com))
+**PID.txt**（放 `sources\PID.txt`）可以预先填写产品密钥（可选）。如果你不填任何 key，某些安装器/版本会允许跳过输入，但行为不一。MS 文档说明了 ei.cfg 与 PID.txt 的用途。([Microsoft Learn](![image-20260420](https://learn.microsoft.com/en-us/windows-hardware/manufacture/desktop/windows-setup-edition-configuration-and-product-id-files--eicfg-and-pidtxt?view=windows-11&utm_source=chatgpt.com))
 
 要点／优点：
 
@@ -159,7 +159,7 @@ Retail
 
 注意：
 
-- 新版安装器（例如某些 24H2 installer）对 ei.cfg 的处理有所变化，可能不会按预期工作 —— 若遇到新版安装器不尊重 ei.cfg，请改用 autounattend。([Reddit](https://www.reddit.com/r/Operatingsystems/comments/1fy2ae0/new_24h2_windows_os_installer_wont_let_you_choose/?utm_source=chatgpt.com))
+- 新版安装器（例如某些 24H2 installer）对 ei.cfg 的处理有所变化，可能不会按预期工作 —— 若遇到新版安装器不尊重 ei.cfg，请改用 autounattend。([Reddit](![image-20260420](https://www.reddit.com/r/Operatingsystems/comments/1fy2ae0/new_24h2_windows_os_installer_wont_let_you_choose/?utm_source=chatgpt.com))
 
 ------
 
@@ -195,9 +195,9 @@ USB或ISO的根目录/
 
 
 
-如果遇到虚拟机不能正常加载系统，而系统本身没有问题，那么试一试改这两个选项：
 
-![image-20260412201010922](https://raw.githubusercontent.com/duanxueli08-cell/Obsidian-Images/main/img/image-20260412201010922.png)
+
+
 
 
 
@@ -298,15 +298,17 @@ Value=KBN8V-HFGQ4-MGXVD-347P6-PDQGT
 
 
 
+##### 无法加载系统
+
+>  如果遇到虚拟机不能正常加载系统，而系统本身没有问题，那么试一试改这两个选项：
+
+![image-20260420152538171](https://cdn.jsdelivr.net/gh/duanxueli08-cell/Obsidian-Images@main/img/image-20260420152538171.png)
 
 
 
 
 
-
-
-
-## 达者为尊
+## 达者为尊 (sky)
 
 > 自己费劲敲命令封装，还不如人家用工具点点点封装舒服，而且成功率高、效率也高！
 
@@ -318,21 +320,21 @@ Value=KBN8V-HFGQ4-MGXVD-347P6-PDQGT
 >
 > 打开软件，点击-设置
 
-https://raw.githubusercontent.com/duanxueli08-cell/Obsidian-Images/main/img/image-20260417213940382.png
+![image-20260420](https://cdn.jsdelivr.net/gh/duanxueli08-cell/Obsidian-Images@main/img/image-20260417213940382.png)
 
-
+A
 
 > 按照自己的需求来，不懂的抄作业！
 
-https://raw.githubusercontent.com/duanxueli08-cell/Obsidian-Images/main/img/image-20260417214317993.png
+![image-20260420](https://cdn.jsdelivr.net/gh/duanxueli08-cell/Obsidian-Images@main/img/image-20260417214317993.png)
 
 
 
 > 然后就是完成后关机，也可以不关机，看自己了！
 
-https://raw.githubusercontent.com/duanxueli08-cell/Obsidian-Images/main/img/image-20260417214542494.png
+![image-20260420](https://cdn.jsdelivr.net/gh/duanxueli08-cell/Obsidian-Images@main/img/image-20260417214542494.png)
 
-https://raw.githubusercontent.com/duanxueli08-cell/Obsidian-Images/main/img/image-20260417214624273.png
+![image-20260420](https://cdn.jsdelivr.net/gh/duanxueli08-cell/Obsidian-Images@main/img/image-20260417214624273.png)
 
 
 
@@ -340,35 +342,35 @@ https://raw.githubusercontent.com/duanxueli08-cell/Obsidian-Images/main/img/imag
 
 > 再次进入，就需要从 PE 系统对封装的系统进行操作了！
 
-https://raw.githubusercontent.com/duanxueli08-cell/Obsidian-Images/main/img/image-20260417215408358.png
+![image-20260420](https://cdn.jsdelivr.net/gh/duanxueli08-cell/Obsidian-Images@main/img/image-20260417215408358.png)
 
 
 
 > 在 PE 系统打开该软件（所以需要准备两个硬盘，一个是系统盘，一个是空置盘），点击设置，进行无人值守自动化设置；
 
-https://raw.githubusercontent.com/duanxueli08-cell/Obsidian-Images/main/img/image-20260417215640522.png
+![image-20260420](https://cdn.jsdelivr.net/gh/duanxueli08-cell/Obsidian-Images@main/img/image-20260417215640522.png)
 
-https://raw.githubusercontent.com/duanxueli08-cell/Obsidian-Images/main/img/image-20260417215952128.png
+![image-20260420](https://cdn.jsdelivr.net/gh/duanxueli08-cell/Obsidian-Images@main/img/image-20260417215952128.png)
 
-https://raw.githubusercontent.com/duanxueli08-cell/Obsidian-Images/main/img/image-20260417220015132.png
+![image-20260420](https://cdn.jsdelivr.net/gh/duanxueli08-cell/Obsidian-Images@main/img/image-20260417220015132.png)
 
-https://raw.githubusercontent.com/duanxueli08-cell/Obsidian-Images/main/img/image-20260417220214720.png
+![image-20260420](https://cdn.jsdelivr.net/gh/duanxueli08-cell/Obsidian-Images@main/img/image-20260417220214720.png)
 
-https://raw.githubusercontent.com/duanxueli08-cell/Obsidian-Images/main/img/image-20260417220344747.png
+![image-20260420](https://cdn.jsdelivr.net/gh/duanxueli08-cell/Obsidian-Images@main/img/image-20260417220344747.png)
 
-https://raw.githubusercontent.com/duanxueli08-cell/Obsidian-Images/main/img/image-20260417220405256.png
+![image-20260420](https://cdn.jsdelivr.net/gh/duanxueli08-cell/Obsidian-Images@main/img/image-20260417220405256.png)
 
-https://raw.githubusercontent.com/duanxueli08-cell/Obsidian-Images/main/img/image-20260417220428296.png
+![image-20260420](https://cdn.jsdelivr.net/gh/duanxueli08-cell/Obsidian-Images@main/img/image-20260417220428296.png)
 
-https://raw.githubusercontent.com/duanxueli08-cell/Obsidian-Images/main/img/image-20260417220455720.png
+![image-20260420](https://cdn.jsdelivr.net/gh/duanxueli08-cell/Obsidian-Images@main/img/image-20260417220455720.png)
 
 
 
 > 确认好，没问题就保存吧！
 
-https://raw.githubusercontent.com/duanxueli08-cell/Obsidian-Images/main/img/image-20260417220517847.png
+![image-20260420](https://cdn.jsdelivr.net/gh/duanxueli08-cell/Obsidian-Images@main/img/image-20260417220517847.png)
 
-https://raw.githubusercontent.com/duanxueli08-cell/Obsidian-Images/main/img/image-20260417220625793.png
+![image-20260420](https://cdn.jsdelivr.net/gh/duanxueli08-cell/Obsidian-Images@main/img/image-20260417220625793.png)
 
 
 
@@ -378,23 +380,23 @@ https://raw.githubusercontent.com/duanxueli08-cell/Obsidian-Images/main/img/imag
 
 > 最关键的一步，得到最终的 WIM 文件
 
-https://raw.githubusercontent.com/duanxueli08-cell/Obsidian-Images/main/img/image-20260417221401003.png
+![image-20260420](https://cdn.jsdelivr.net/gh/duanxueli08-cell/Obsidian-Images@main/img/image-20260417221401003.png)
 
-https://raw.githubusercontent.com/duanxueli08-cell/Obsidian-Images/main/img/image-20260417222644794.png
+![image-20260420](https://cdn.jsdelivr.net/gh/duanxueli08-cell/Obsidian-Images@main/img/image-20260417222644794.png)
 
-https://raw.githubusercontent.com/duanxueli08-cell/Obsidian-Images/main/img/image-20260417222825558.png
+![image-20260420](https://cdn.jsdelivr.net/gh/duanxueli08-cell/Obsidian-Images@main/img/image-20260417222825558.png)
 
-https://raw.githubusercontent.com/duanxueli08-cell/Obsidian-Images/main/img/image-20260417223000928.png
+![image-20260420](https://cdn.jsdelivr.net/gh/duanxueli08-cell/Obsidian-Images@main/img/image-20260417223000928.png)
 
-https://raw.githubusercontent.com/duanxueli08-cell/Obsidian-Images/main/img/image-20260417223137778.png
+![image-20260420](https://cdn.jsdelivr.net/gh/duanxueli08-cell/Obsidian-Images@main/img/image-20260417223137778.png)
 
 
 
 > 这一步封装需要的时间比较长，封装的系统盘越大，时间越长！所以我先干点别的事情。
 
-![image-20260420150315448](https://cdn.jsdelivr.net/gh/duanxueli08-cell/Obsidian-Images@main/img/image-20260420150315448.png)
+![image-20260420150315448](https://cdn.jsdelivr.net/gh/duanxueli08-cell/Obsidian-Images@main/img/image-20260420150315448.png))
 
-https://raw.githubusercontent.com/duanxueli08-cell/Obsidian-Images/main/img/image-20260417221844082.png
+![image-20260420](https://cdn.jsdelivr.net/gh/duanxueli08-cell/Obsidian-Images@main/img/image-20260417221844082.png)
 
 
 
