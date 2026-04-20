@@ -280,7 +280,7 @@ pause
 ### 下载安装顺序
 
 ```powershell
-下载地址：
+# 下载地址：
 https://pan.quark.cn/s/405fb584666c
 
 ```
@@ -386,6 +386,7 @@ winget
 # VMware
 # 图吧工具箱
 # Todesk		# 我是不用，可是有的人需要啊！唉……
+# steam			# 可有可无！！
 ```
 
 
