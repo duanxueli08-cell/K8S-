@@ -166,4 +166,4 @@ $null = $Host.UI.RawUI.ReadKey("NoEcho,IncludeKeyDown")
 
 > 转换编码示例：
 
-![image-20260418120341819](https://raw.githubusercontent.com/duanxueli08-cell/Obsidian-Images/main/img/image-20260418120341819.png)
+![image-20260418120341819](https://cdn.jsdelivr.net/gh/duanxueli08-cell/Obsidian-Images@main/img/image-20260418120341819.png)

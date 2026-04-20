@@ -1572,7 +1572,7 @@ SELECT allow_local_requests_from_web_hooks_and_services FROM application_setting
 >
 > 由于 Jenkins 在后台拉取代码是一个自动化程序，**没有人工界面让它输入 `yes`**，而 Jenkins 默认开启了严格的主机密钥检查（strict checking），遇到不认识的域名直接就拒绝连接报错了。
 
-![image-20260404140728982.png](https://raw.githubusercontent.com/duanxueli08-cell/Obsidian-Images/main/img/image-20260404140728982.png)
+![image-20260404140728982.png](https://cdn.jsdelivr.net/gh/duanxueli08-cell/Obsidian-Images@main/img/image-20260404140728982.png)
 
 
 ##### 方法一 （推荐使用第一种方法）
@@ -1738,27 +1738,27 @@ ss -tunlp | egrep '6443|10250|10256|8472' ; ps aux | grep kube
 
 #### GitLab_SSH Keys
 
-![image-20260404222956177.png](https://raw.githubusercontent.com/duanxueli08-cell/Obsidian-Images/main/img/image-20260404222956177.png)
+![image-20260404222956177.png](https://cdn.jsdelivr.net/gh/duanxueli08-cell/Obsidian-Images@main/img/image-20260404222956177.png)
 
-![image.png](https://raw.githubusercontent.com/duanxueli08-cell/Obsidian-Images/main/img/20260404225838939.png)
+![image.png](https://cdn.jsdelivr.net/gh/duanxueli08-cell/Obsidian-Images@main/img/20260404225838939.png)
 
 
 
 #### GitLab_Deploy Keys
 
-![image-20260404230339742](https://raw.githubusercontent.com/duanxueli08-cell/Obsidian-Images/main/img/image-20260404230339742.png)
+![image-20260404230339742](https://cdn.jsdelivr.net/gh/duanxueli08-cell/Obsidian-Images@main/img/image-20260404230339742.png)
 
-![image-20260404230431733](https://raw.githubusercontent.com/duanxueli08-cell/Obsidian-Images/main/img/image-20260404230431733.png)
+![image-20260404230431733](https://cdn.jsdelivr.net/gh/duanxueli08-cell/Obsidian-Images@main/img/image-20260404230431733.png)
 
 
 
 #### GitLab_Webhook
 
-![image-20260404230836624](https://raw.githubusercontent.com/duanxueli08-cell/Obsidian-Images/main/img/image-20260404230836624.png)
+![image-20260404230836624](https://cdn.jsdelivr.net/gh/duanxueli08-cell/Obsidian-Images@main/img/image-20260404230836624.png)
 
-![image-20260404230927083](https://raw.githubusercontent.com/duanxueli08-cell/Obsidian-Images/main/img/image-20260404230927083.png)
+![image-20260404230927083](https://cdn.jsdelivr.net/gh/duanxueli08-cell/Obsidian-Images@main/img/image-20260404230927083.png)
 
-![image-20260403012717099.png](https://raw.githubusercontent.com/duanxueli08-cell/Obsidian-Images/main/img/image-20260403012717099.png)
+![image-20260403012717099.png](https://cdn.jsdelivr.net/gh/duanxueli08-cell/Obsidian-Images@main/img/image-20260403012717099.png)
 
 
 
@@ -1766,11 +1766,11 @@ ss -tunlp | egrep '6443|10250|10256|8472' ; ps aux | grep kube
 
 [Webhook](####Webhook)
 
-![image-20260404230339742](https://raw.githubusercontent.com/duanxueli08-cell/Obsidian-Images/main/img/image-20260404230339742.png)
+![image-20260404230339742](https://cdn.jsdelivr.net/gh/duanxueli08-cell/Obsidian-Images@main/img/image-20260404230339742.png)
 
-![image-20260404231117937](https://raw.githubusercontent.com/duanxueli08-cell/Obsidian-Images/main/img/image-20260404231117937.png)
+![image-20260404231117937](https://cdn.jsdelivr.net/gh/duanxueli08-cell/Obsidian-Images@main/img/image-20260404231117937.png)
 
-![image-20260402235014703.png](https://raw.githubusercontent.com/duanxueli08-cell/Obsidian-Images/main/img/image-20260402235014703.png)
+![image-20260402235014703.png](https://cdn.jsdelivr.net/gh/duanxueli08-cell/Obsidian-Images@main/img/image-20260402235014703.png)
 
 
 

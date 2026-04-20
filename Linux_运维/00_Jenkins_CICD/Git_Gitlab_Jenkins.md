@@ -155,15 +155,15 @@ git remote add origin https://github.com/duanxueli08-cell/mygit.git
 
 #### **这些图片，无需多盐！**
 
-![image-20260219231304143](https://raw.githubusercontent.com/duanxueli08-cell/Obsidian-Images/main/img/image-20260219231304143.png)
+![image-20260219231304143](https://cdn.jsdelivr.net/gh/duanxueli08-cell/Obsidian-Images@main/img/image-20260219231304143.png)
 
 
-![image-20251116174541249.png](https://raw.githubusercontent.com/duanxueli08-cell/Obsidian-Images/main/img/image-20251116174541249.png)
+![image-20251116174541249.png](https://cdn.jsdelivr.net/gh/duanxueli08-cell/Obsidian-Images@main/img/image-20251116174541249.png)
 
-![image-20251116172550065.png](https://raw.githubusercontent.com/duanxueli08-cell/Obsidian-Images/main/img/image-20251116172550065.png)
+![image-20251116172550065.png](https://cdn.jsdelivr.net/gh/duanxueli08-cell/Obsidian-Images@main/img/image-20251116172550065.png)
 
 
-![image-20251116172114867.png](https://raw.githubusercontent.com/duanxueli08-cell/Obsidian-Images/main/img/image-20251116172114867.png)
+![image-20251116172114867.png](https://cdn.jsdelivr.net/gh/duanxueli08-cell/Obsidian-Images@main/img/image-20251116172114867.png)
 
 
 
@@ -553,7 +553,7 @@ git push origin master
 git push --tags
 ```
 
-![image-20251120093932234](https://raw.githubusercontent.com/duanxueli08-cell/Obsidian-Images/main/img/image-20251120093932234.png)
+![image-20251120093932234](https://cdn.jsdelivr.net/gh/duanxueli08-cell/Obsidian-Images@main/img/image-20251120093932234.png)
 
 #### 多任务构建
 
@@ -1030,11 +1030,11 @@ sudo systemctl status sonarqube
 
 > 在 Marketplace 点击我已经了解风险，然后才能对各插件进行下载
 
-![image-20251122111257843](https://raw.githubusercontent.com/duanxueli08-cell/Obsidian-Images/main/img/image-20251122111257843.png)
+![image-20251122111257843](https://cdn.jsdelivr.net/gh/duanxueli08-cell/Obsidian-Images@main/img/image-20251122111257843.png)
 
 重启服务才能生效，安装后界面
 
-![image-20251122111404604](https://raw.githubusercontent.com/duanxueli08-cell/Obsidian-Images/main/img/image-20251122111404604.png)
+![image-20251122111404604](https://cdn.jsdelivr.net/gh/duanxueli08-cell/Obsidian-Images@main/img/image-20251122111404604.png)
 
 #### 安装客户端
 
@@ -1120,7 +1120,7 @@ source ~/.bashrc
 sonarqube.duan.org:9000
 ```
 
-![image-20251122113932289](https://raw.githubusercontent.com/duanxueli08-cell/Obsidian-Images/main/img/image-20251122113932289.png)
+![image-20251122113932289](https://cdn.jsdelivr.net/gh/duanxueli08-cell/Obsidian-Images@main/img/image-20251122113932289.png)
 
 ### Jenkins集成项目
 

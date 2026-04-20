@@ -36,7 +36,7 @@
 
 #### 展示图
 
-![image.png](https://raw.githubusercontent.com/duanxueli08-cell/Obsidian-Images/main/img/20251230220648508.png)
+![image.png](https://cdn.jsdelivr.net/gh/duanxueli08-cell/Obsidian-Images@main/img/20251230220648508.png)
 
 
 ### JSON 文件
@@ -683,7 +683,7 @@ wsl --install
 默认安装 Ubuntu 发行版（来自 Microsoft Store）
 
 重启后，会弹出一个终端界面自动下载安装 Ubuntu 系统
-![](https://raw.githubusercontent.com/duanxueli08-cell/Obsidian-Images/main/img/20260103143906638.png)
+![](https://cdn.jsdelivr.net/gh/duanxueli08-cell/Obsidian-Images@main/img/20260103143906638.png)
 
 
 
@@ -784,7 +784,7 @@ foreach ($ip in $ips) {
 解决经过：
 
 - 修改默认终端应用程序
-![image.png](https://raw.githubusercontent.com/duanxueli08-cell/Obsidian-Images/main/img/20260103182237146.png)
+![image.png](https://cdn.jsdelivr.net/gh/duanxueli08-cell/Obsidian-Images@main/img/20260103182237146.png)
 
 - 修改 JSON 文件，将 "keybindings" 字段下涉及到对应快捷键的空绑定删除！
-![image.png](https://raw.githubusercontent.com/duanxueli08-cell/Obsidian-Images/main/img/20260103182415883.png)
+![image.png](https://cdn.jsdelivr.net/gh/duanxueli08-cell/Obsidian-Images@main/img/20260103182415883.png)

@@ -19,7 +19,7 @@
 - Cursor、VS Code、Obsidian 不再出现中文路径乱码
 
 > ⚠️ 注意：极少数老旧软件（如某些国产安装包）可能不兼容，但现代开发工具完全没问题。
-![image.png](https://raw.githubusercontent.com/duanxueli08-cell/Obsidian-Images/main/img/20251228172815990.png)
+![image.png](https://cdn.jsdelivr.net/gh/duanxueli08-cell/Obsidian-Images@main/img/20251228172815990.png)
 
 ## 🛠️ 补充：强制命令行使用 UTF-8（即使未改系统设置）
 

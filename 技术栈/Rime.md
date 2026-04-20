@@ -82,7 +82,7 @@ https://github.com/amzxyz/RIME-LMDG/releases/download/LTS/wanxiang-lts-zh-hans.g
 ##### 第二步：解压文件并将文件放置到用户目录
 
 - 切换到小狼毫输入法，右击该图标，选择用户目录！（这个用户目录可以改！）
-![image.png](https://raw.githubusercontent.com/duanxueli08-cell/Obsidian-Images/main/img/20260222132706401.png)
+![image.png](https://cdn.jsdelivr.net/gh/duanxueli08-cell/Obsidian-Images@main/img/20260222132706401.png)
 
 - 将下载的语法模型文件，以及标准版输入方案文件夹下的所有文件拷贝到用户文件夹中；
 	- wanxiang-lts-zh-hans.gram 这个语法模型文件；
@@ -102,22 +102,22 @@ https://github.com/amzxyz/RIME-LMDG/releases/download/tool/wanxiang-tools.exe
 
 - 切换到小狼毫输入法，右击该图标，选择输入法设定
 
-![image.png](https://raw.githubusercontent.com/duanxueli08-cell/Obsidian-Images/main/img/20260222134036826.png)
+![image.png](https://cdn.jsdelivr.net/gh/duanxueli08-cell/Obsidian-Images@main/img/20260222134036826.png)
 
 - 勾选万象拼音；
 - 其它的方案取消勾选（根据个人的需求来，想要哪个就勾选哪个！全选都行！）
 - 选好后，点击——中
-![image.png](https://raw.githubusercontent.com/duanxueli08-cell/Obsidian-Images/main/img/20260222134443866.png)
+![image.png](https://cdn.jsdelivr.net/gh/duanxueli08-cell/Obsidian-Images@main/img/20260222134443866.png)
 
 - 然后弹出这个窗口，选择自己喜欢的界面风格；选好后点击——中
-![image.png](https://raw.githubusercontent.com/duanxueli08-cell/Obsidian-Images/main/img/20260222134559271.png)
+![image.png](https://cdn.jsdelivr.net/gh/duanxueli08-cell/Obsidian-Images@main/img/20260222134559271.png)
 
 - 重新部署
-![image.png](https://raw.githubusercontent.com/duanxueli08-cell/Obsidian-Images/main/img/20260222134906125.png)
+![image.png](https://cdn.jsdelivr.net/gh/duanxueli08-cell/Obsidian-Images@main/img/20260222134906125.png)
 
 
 - 然后等待部署完成！就是这个漏斗图标出现，消失后就说明部署完成！
-![image.png](https://raw.githubusercontent.com/duanxueli08-cell/Obsidian-Images/main/img/20260222134654600.png)
+![image.png](https://cdn.jsdelivr.net/gh/duanxueli08-cell/Obsidian-Images@main/img/20260222134654600.png)
 
 
 

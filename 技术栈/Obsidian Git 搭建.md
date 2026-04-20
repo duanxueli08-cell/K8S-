@@ -193,7 +193,7 @@ cat ~/.ssh/id_ed25519.pub
 cat ~/.ssh/id_Economics.pub
 ```
 
-![image.png](https://raw.githubusercontent.com/duanxueli08-cell/Obsidian-Images/main/img/20260417203128842.png)
+![image.png](https://cdn.jsdelivr.net/gh/duanxueli08-cell/Obsidian-Images@main/img/20260417203128842.png)
 
 ```
 # 测试连接是否成功
@@ -340,7 +340,7 @@ main
 - **极简**：你的 Obsidian 文件夹里再也不会有一堆乱七八糟的 `.png` 文件了，只有纯粹的 Markdown。
 
 图灵测试
-![image.png](https://raw.githubusercontent.com/duanxueli08-cell/Obsidian-Images/main/img/20251224170803576.png)
+![image.png](https://cdn.jsdelivr.net/gh/duanxueli08-cell/Obsidian-Images@main/img/20251224170803576.png)
 
 ```
 
@@ -414,8 +414,8 @@ Write-Host "[1/4] 扫描本地笔记中引用的图片..."
 $usedImages = @()
 Get-ChildItem -Path $OBSIDIAN_VAULT_PATH -Recurse -Include "*.md" | ForEach-Object {
     $content = Get-Content $_.FullName -Raw
-    # 匹配形如 https://raw.githubusercontent.com/duanxueli08-cell/Obsidian-Images/main/img/xxx.png 的 URL
-    $matches = [regex]::Matches($content, 'https://raw\.githubusercontent\.com/duanxueli08-cell/Obsidian-Images/main/img/([^)\s]+)')
+    # 匹配形如 https://cdn.jsdelivr.net/gh/duanxueli08-cell/Obsidian-Images@main/img/xxx.png 的 URL
+    $matches = [regex]::Matches($content, 'https://raw\.githubusercontent\.com/duanxueli08-cell/Obsidian-Images@main/img/([^)\s]+)')
     foreach ($m in $matches) {
         $filename = $m.Groups[1].Value
         if ($filename -match '\.(png|jpg|jpeg|gif|webp)$') {
