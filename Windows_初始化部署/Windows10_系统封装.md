@@ -279,12 +279,15 @@ pause
 
 ### 下载安装顺序
 
+下载地址
 ```powershell
-# 下载地址：
+# 夸克
 https://pan.quark.cn/s/405fb584666c
 
+# 阿里云
+https://www.alipan.com/s/Zi8UwYxYfWj
+提取码：fs15
 ```
-
 
 
 #### 第一梯队
