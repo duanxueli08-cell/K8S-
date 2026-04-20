@@ -1,6 +1,6 @@
-# Windows10系统封装
+## 旧时代封装
 
-## 封装涉及到的工具
+### 封装涉及到的工具
 
 ```powershell
 Anyburn						（必选，也可以是其他的替代品）
@@ -12,19 +12,9 @@ Dism++10.1.1002.1B			（可选）
 
 
 
-## 封装涉及到的指令
+### 封装涉及到的指令
 
-### 封装命令
-
-```powershell
-slmgr /upk          # 卸载产品密钥(可选)
-slmgr /cpky         # 清除注册表中的密钥（可选）
-
-进入sysprep.exe文件所在的目录进行封装
-cd C:\Windows\System32\Sysprep
-
-sysprep.exe /generalize /oobe /shutdown /unattend:C:\Windows\System32\Sysprep\autounattend.xml
-```
+#### 封装命令
 
 ```powershell
 slmgr /upk 
@@ -34,11 +24,22 @@ slmgr /cpky
 cd C:\Windows\System32\Sysprep
 
 sysprep.exe /generalize /oobe /shutdown /unattend:C:\Windows\System32\Sysprep\autounattend.xml
+
+
+--- 解释 ——
+
+
+slmgr /upk          # 卸载产品密钥(可选)
+slmgr /cpky         # 清除注册表中的密钥（可选）
+
+cd C:\Windows\System32\Sysprep
+./sysprep.exe /generalize /oobe /shutdown /unattend:C:\Windows\System32\Sysprep\autounattend.xml
+# 进入sysprep.exe文件所在的目录进行封装
 ```
 
 
 
-### 导出镜像
+#### 导出镜像
 
 ```powershell
 dism /capture-image /imagefile:E:\install.wim /capturedir:D:\ /name:"Windows10_Custom"
@@ -62,21 +63,9 @@ dism /capture-image /imagefile:E:\install.wim /capturedir:D:\ /name:"Windows10_C
 
 
 
-**如何定义EI.CFG文件，需要查看映像文件版本信息：**
-
-dism /get-wiminfo /wimfile:F:\系统封装教程\install.wim
-
->F:\系统封装教程\install.wim 这个是存放install.wim文件的路径，根据实际情况更改。
-
-dism /get-wiminfo /wimfile:F:\系统封装教程\install.wim /index:1
-
-> index:1 这个是索引值，根据上面的指令查看索引值。
-
-> **继续使用 IoTEnterpriseS 映像**并且想在安装过程**跳过输入产品密钥**的提示。
-
-------
-
-### 方法 A — 用 **autounattend.xml**（推荐，最可靠）
+### 无人值守
+#### 方法 A 
+>用 **autounattend.xml**（推荐，最可靠）
 
 把一个自动应答文件 `autounattend.xml` 放在安装介质（USB/ISO）的根目录，Windows Setup 会在启动时自动读取并按配置跳过提示。
 
@@ -126,14 +115,15 @@ dism /get-wiminfo /wimfile:F:\系统封装教程\install.wim /index:1
 - 文件名 **`unattend.xml`** 通常是用在 Windows 部署服务（WDS）、MDT（Microsoft Deployment Toolkit）等环境中的，通常不是在标准安装介质（USB 或 ISO）中自动加载的名称。
 - **`unattend.xml`**：通常用于批量部署环境（如 WDS 或 MDT），并不是自动执行的文件，而是需要在部署过程中特别调用或指定。
 
-### 结论：
+#### 结论：
 
 - **对于普通的 Windows 安装 ISO 或 USB 启动介质**，必须使用 **`autounattend.xml`**，否则文件中的配置不会被自动读取。
 - **如果你只想跳过产品密钥输入并自动化安装**，确保命名文件为 **`autounattend.xml`**，并将其放到安装介质的根目录。
 
 ------
 
-### 方法 B — 用 `ei.cfg` / `PID.txt` 控制（简单、快速）
+### 方法 B 
+> 用 `ei.cfg` / `PID.txt` 控制（简单、快速）
 
 将下面的文件放到 ISO 的 `sources` 目录下可以影响安装器对版本和密钥的处理。
 
@@ -194,6 +184,17 @@ USB或ISO的根目录/
 - **之前一直存在的问题 “安装的时候显示输入的产品密钥与可用于安装的任何可用windows映像都不匹配” 得到解决，我估计是EI.CFG文件生效了！**
 
 
+**如何定义EI.CFG文件，需要查看映像文件版本信息：**
+
+dism /get-wiminfo /wimfile:F:\系统封装教程\install.wim
+
+>F:\系统封装教程\install.wim 这个是存放install.wim文件的路径，根据实际情况更改。
+
+dism /get-wiminfo /wimfile:F:\系统封装教程\install.wim /index:1
+
+> index:1 这个是索引值，根据上面的指令查看索引值。
+
+> **继续使用 IoTEnterpriseS 映像**并且想在安装过程**跳过输入产品密钥**的提示。
 
 
 
@@ -201,114 +202,9 @@ USB或ISO的根目录/
 
 
 
-#### 寻医问药
-
-这是我要定制的系统。
-
-版本	Windows 10 IoT 企业版 LTSC
-版本号	21H2
-
-现在我想要根据这个系统定制我自己的系统盘，但是失败了！失败之处就是做好的系统启动时密钥验证不通过！这也说明我的 autounattend.xml 文件失效了！没有发挥出它的作用。帮我优化这三个文件，我想要想通过密钥验证，或者跳过验证！
-
-另外我想把 autounattend.xml 放在 ISO 根目录下，ei.cfg 和 PID.txt 这两个文件放在 ISO 的 `sources` 目录下，是否可行？
-
-autounattend.xml
-
->只用 `autounattend.xml`，这是最稳妥、最高效、且通过率最高的方案！
-
-```powershell
-<?xml version="1.0" encoding="utf-8"?>
-<unattend xmlns="urn:schemas-microsoft-com:unattend">
-
-  <settings pass="windowsPE">
-    <component name="Microsoft-Windows-Setup" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35" language="neutral" versionScope="nonSxS" xmlns:wcm="http://schemas.microsoft.com/WMIConfig/2002/State" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-      <UserData>
-        <AcceptEula>true</AcceptEula>
-        <ProductKey>
-          <Key>QPM6N-7J2WJ-P88HH-P3YRH-YY74H</Key>
-          <WillShowUI>Never</WillShowUI>
-        </ProductKey>
-      </UserData>
-    </component>
-  </settings>
-
-  <settings pass="specialize">
-    <component name="Microsoft-Windows-Security-SPP-UX" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35" language="neutral" versionScope="nonSxS" xmlns:wcm="http://schemas.microsoft.com/WMIConfig/2002/State" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-      <SkipAutoActivation>true</SkipAutoActivation>
-    </component>
-  </settings>
-
-  <settings pass="oobeSystem">
-    <component name="Microsoft-Windows-Shell-Setup" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35" language="neutral" versionScope="nonSxS" xmlns:wcm="http://schemas.microsoft.com/WMIConfig/2002/State" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-      
-      <UserAccounts>
-        <AdministratorPassword>
-          <Value></Value>
-          <PlainText>true</PlainText>
-        </AdministratorPassword>
-      </UserAccounts>
-
-      <AutoLogon>
-        <Password>
-          <Value></Value>
-          <PlainText>true</PlainText>
-        </Password>
-        <Enabled>true</Enabled>
-        <LogonCount>9999999</LogonCount>
-        <Username>Administrator</Username>
-      </AutoLogon>
-
-      <OOBE>
-        <HideEULAPage>true</HideEULAPage>
-        <HideLocalAccountScreen>true</HideLocalAccountScreen>
-        <HideOEMRegistrationScreen>true</HideOEMRegistrationScreen>
-        <HideOnlineAccountScreens>true</HideOnlineAccountScreens>
-        <HideWirelessSetupInOOBE>true</HideWirelessSetupInOOBE>
-        <ProtectYourPC>3</ProtectYourPC> </OOBE>
-
-    </component>
-  </settings>
-
-</unattend>
-```
-
-ei.cfg
-
->Windows 10 IoT 企业版（IoTEnterpriseS）在微软的体系中，通常属于 **OEM** 授权渠道，而不是 Retail（零售版）。你的原文件写了 `Retail`，这可能会与你的密钥类型产生冲突。建议修改为 `OEM`。
-
-```ini
-[EditionID]
-IoTEnterpriseS
-
-[Channel]
-OEM
-
-[VL]
-0
-```
-
-PID.txt
-
-> 既然我们已经在 `autounattend.xml` 中指定了密钥，**建议直接删除 ISO 中的 PID.txt 文件**。 保留它不仅没有意义，反而增加未来修改时产生冲突的风险。如果坚持要保留，请确保里面的密钥与 XML 中的完全一致：
-
-```powershell
-[PID]
-Value=KBN8V-HFGQ4-MGXVD-347P6-PDQGT
-```
 
 
-
-##### 无法加载系统
-
->  如果遇到虚拟机不能正常加载系统，而系统本身没有问题，那么试一试改这两个选项：
-
-![image-20260420152538171](https://cdn.jsdelivr.net/gh/duanxueli08-cell/Obsidian-Images@main/img/image-20260420152538171.png)
-
-
-
-
-
-## 达者为尊 (sky)
+## 新时代封装 (sky)
 
 > 自己费劲敲命令封装，还不如人家用工具点点点封装舒服，而且成功率高、效率也高！
 
@@ -403,3 +299,53 @@ A
 > 最后将 WIM 文件剪辑或者拷贝到宿主机中！
 >
 > 穿山甲：哈哈😄，我滴任务完成了！
+
+
+## 注意事项
+
+第一：最好不要动 Microsoft store ，也不要在里面下载任何安装包；
+
+> 这是导致 Sysprep（系统准备工具）报错失败的头号杀手。Windows 封装时，系统会检查 Appx（UWP应用）包的挂载情况。如果某个应用只为当前用户安装或更新过，Sysprep 无法将其泛化（Generalize）到所有用户，直接就会报严重错误。
+
+第二：用 Administrator 管理员用户，其他的普通用户删除；
+
+> 封装必须在系统内置的最高权限 Administrator 账户下进行。存在多用户配置文件会导致权限错乱和 Sysprep 泛化失败。最标准的做法是在安装系统到 OOBE 阶段（也就是让你选国家、起名字那个界面）时，直接按 Ctrl + Shift + F3，系统会自动重启并以 Administrator 身份进入审核模式（Audit Mode），此时完全没有普通用户的干扰。
+
+第三：如果是在虚拟机中封装，封装前记得把 VMware tools 这些虚拟工具删除！
+
+> 虚拟机的 Tools 包含了针对虚拟网卡、虚拟显卡的底层驱动。如果不卸载就封装，部署到实体机时，系统会带着虚拟机的驱动去匹配实体机的物理硬件，极大可能导致部署阶段蓝屏（BSOD）或严重卡顿。
+
+第四：关闭 Windows 自动更新和 Defender
+
+> 在封装前，最好用工具或者组策略彻底关闭 Windows Update，并临时关闭 Windows Defender，防止在打包过程中系统文件被锁死或篡改。Windows 10/11 会在后台偷偷静默更新驱动、偷偷下载微软商店的内置应用（比如 Candy Crush、TikTok），这会直接触发第一条，导致封装失败。
+
+第五：不要安装任何硬件驱动
+
+> 在虚拟机里，除了系统自带的泛用驱动，不要手动安装任何显卡、网卡、主板的驱动程序。驱动包（如万能驱动助理）应该在封装工具设置的部署阶段再去调用，而不是直接安装在母盘里。
+
+杀毒软件最后装（或干脆不装）
+
+360、火绒、迈克菲等杀毒软件会接管系统的底层权限和注册表。如果带着它们封装，可能会拦截封装工具修改系统引导和注册表的行为，导致部署后无限重启。建议把杀毒软件的安装包放在桌面上，部署完成后再手动安装，或者利用静默安装包在系统部署的最后阶段调用。
+
+软件安装在 C 盘
+
+封装的软件尽量使用默认路径（通常是 C 盘）。不要把软件装在 D 盘，因为你无法保证别人电脑的硬盘分区情况，万一部署的机器只有 C 盘，装在 D 盘的软件快捷方式就会全部失效。
+
+在封装前要祛激活系统，使系统处于未激活状态；
+
+KMS 或数字权利激活会在系统里留下当前虚拟机的硬件特征（HWID）。封装前的系统不需要激活，激活的动作应该交给部署完成后的激活工具来做。
+
+深度清理垃圾
+
+封装前，清空回收站、删除系统临时文件（%temp%）、删除 C:\Windows\SoftwareDistribution\Download 下的补丁缓存，这样能大幅缩小最终镜像（.wim 或 .esd）的体积。
+
+
+##### VMware
+
+>  如果用虚拟机可能会遇到这个问题：
+>  不能正常加载系统，而系统本身没有问题，那么试一试改这两个选项：
+
+![image-20260420152538171](https://cdn.jsdelivr.net/gh/duanxueli08-cell/Obsidian-Images@main/img/image-20260420152538171.png)
+
+
+
