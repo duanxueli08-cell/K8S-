@@ -287,7 +287,12 @@ https://pan.quark.cn/s/405fb584666c
 # 阿里云
 https://www.alipan.com/s/Zi8UwYxYfWj
 提取码：fs15
+
+# 百度云
+https://pan.baidu.com/s/1PQN8K-lj17tNjXcJpSI5Kg?pwd=duan 
 ```
+
+
 
 
 #### 第一梯队
