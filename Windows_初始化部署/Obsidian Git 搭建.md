@@ -239,7 +239,7 @@ Hi duanxueli(@duanxueli)! You've successfully authenticated, but GITEE.COM does 
 |**配置项**|**操作**|**SRE 原理/效果**|
 |---|---|---|
 |**新建自动触发**|开启 `Trigger Templater on new file creation`|监听文件创建事件，发现空文件立即注入代码。|
-|**光标瞬间跳变**|开启 **`Automatic jump to cursor`**|**原理**：启用后，插件会扫描 `<%tp.file.cursor()%>` 占位符。若不开启，光标无法定位，代码会残留为原始文本。|
+|**光标瞬间跳变**|开启 **`Automatic jump to cursor`**|**原理**：启用后，插件会扫描 `<% tp.file.cursor() %>` 占位符。若不开启，光标无法定位，代码会残留为原始文本。|
 |**目录自动化部署**|开启 **`Enable folder templates`**|**效果**：实现“路径即逻辑”。在 `Linux` 文件夹下新建文件自动用 Linux 模板，在 `K8s` 下新建则自动用 K8s 模板。|
 
 ---
