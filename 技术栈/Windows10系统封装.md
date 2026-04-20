@@ -296,3 +296,108 @@ PID.txt
 Value=KBN8V-HFGQ4-MGXVD-347P6-PDQGT
 ```
 
+
+
+
+
+
+
+
+
+
+
+## 达者为尊
+
+> 自己费劲敲命令封装，还不如人家用工具点点点封装舒服，而且成功率高、效率也高！
+
+
+
+### 第一步
+
+> 系统优化和安装软件什么的，自己弄好，这里就不演示了，直接封装；
+>
+> 打开软件，点击-设置
+
+https://raw.githubusercontent.com/duanxueli08-cell/Obsidian-Images/main/img/image-20260417213940382.png
+
+
+
+> 按照自己的需求来，不懂的抄作业！
+
+https://raw.githubusercontent.com/duanxueli08-cell/Obsidian-Images/main/img/image-20260417214317993.png
+
+
+
+> 然后就是完成后关机，也可以不关机，看自己了！
+
+https://raw.githubusercontent.com/duanxueli08-cell/Obsidian-Images/main/img/image-20260417214542494.png
+
+https://raw.githubusercontent.com/duanxueli08-cell/Obsidian-Images/main/img/image-20260417214624273.png
+
+
+
+### 第二步
+
+> 再次进入，就需要从 PE 系统对封装的系统进行操作了！
+
+https://raw.githubusercontent.com/duanxueli08-cell/Obsidian-Images/main/img/image-20260417215408358.png
+
+
+
+> 在 PE 系统打开该软件（所以需要准备两个硬盘，一个是系统盘，一个是空置盘），点击设置，进行无人值守自动化设置；
+
+https://raw.githubusercontent.com/duanxueli08-cell/Obsidian-Images/main/img/image-20260417215640522.png
+
+https://raw.githubusercontent.com/duanxueli08-cell/Obsidian-Images/main/img/image-20260417215952128.png
+
+https://raw.githubusercontent.com/duanxueli08-cell/Obsidian-Images/main/img/image-20260417220015132.png
+
+https://raw.githubusercontent.com/duanxueli08-cell/Obsidian-Images/main/img/image-20260417220214720.png
+
+https://raw.githubusercontent.com/duanxueli08-cell/Obsidian-Images/main/img/image-20260417220344747.png
+
+https://raw.githubusercontent.com/duanxueli08-cell/Obsidian-Images/main/img/image-20260417220405256.png
+
+https://raw.githubusercontent.com/duanxueli08-cell/Obsidian-Images/main/img/image-20260417220428296.png
+
+https://raw.githubusercontent.com/duanxueli08-cell/Obsidian-Images/main/img/image-20260417220455720.png
+
+
+
+> 确认好，没问题就保存吧！
+
+https://raw.githubusercontent.com/duanxueli08-cell/Obsidian-Images/main/img/image-20260417220517847.png
+
+https://raw.githubusercontent.com/duanxueli08-cell/Obsidian-Images/main/img/image-20260417220625793.png
+
+
+
+
+
+### 第三步
+
+> 最关键的一步，得到最终的 WIM 文件
+
+https://raw.githubusercontent.com/duanxueli08-cell/Obsidian-Images/main/img/image-20260417221401003.png
+
+https://raw.githubusercontent.com/duanxueli08-cell/Obsidian-Images/main/img/image-20260417222644794.png
+
+https://raw.githubusercontent.com/duanxueli08-cell/Obsidian-Images/main/img/image-20260417222825558.png
+
+https://raw.githubusercontent.com/duanxueli08-cell/Obsidian-Images/main/img/image-20260417223000928.png
+
+https://raw.githubusercontent.com/duanxueli08-cell/Obsidian-Images/main/img/image-20260417223137778.png
+
+
+
+> 这一步封装需要的时间比较长，封装的系统盘越大，时间越长！所以我先干点别的事情。
+
+![image-20260420150315448](https://cdn.jsdelivr.net/gh/duanxueli08-cell/Obsidian-Images@main/img/image-20260420150315448.png)
+
+https://raw.githubusercontent.com/duanxueli08-cell/Obsidian-Images/main/img/image-20260417221844082.png
+
+
+
+> 最后将 WIM 文件剪辑或者拷贝到宿主机中！
+>
+> 穿山甲：哈哈😄，我滴任务完成了！
