@@ -74,7 +74,9 @@
 
 ## 新时代封装 (sky)
 
-> 自己费劲敲命令封装，还不如人家用工具点点点封装舒服，而且成功率高、效率也高！
+> 之前一直都是敲命令，刚开始用这个不习惯，但是上手后发现真的牛逼！
+>
+> 人家这个不需要敲命令不说，封装成功率非常高！最关键的是不需要自己写答应文件了，这个直接就帮你弄好了！
 
 
 
@@ -82,19 +84,19 @@
 
 > 系统优化和安装软件什么的，自己弄好，这里就不演示了，直接封装；
 >
-> 打开软件，点击-设置
+> 打开软件点击设置，界面上其他的不用动（系统盘乱放的，自个儿想办法！）
 
 ![image-20260420](https://cdn.jsdelivr.net/gh/duanxueli08-cell/Obsidian-Images@main/img/image-20260417213940382.png)
 
 A
 
-> 按照自己的需求来，不懂的抄作业！
+> 基本上也不用动，看自己的需求，如果不懂，就抄我这个作业！然后封装。
 
 ![image-20260420](https://cdn.jsdelivr.net/gh/duanxueli08-cell/Obsidian-Images@main/img/image-20260417214317993.png)
 
 
 
-> 然后就是完成后关机，也可以不关机，看自己了！
+> 然后弹出这个界面，没事的话就封装完关机，看自己需求！（封装完关机，就不能再打开了哦！）
 
 ![image-20260420](https://cdn.jsdelivr.net/gh/duanxueli08-cell/Obsidian-Images@main/img/image-20260417214542494.png)
 
@@ -105,12 +107,16 @@ A
 ### 第二步
 
 > 再次进入，就需要从 PE 系统对封装的系统进行操作了！
+>
+> 进入 BIOS 启动界面，选择启动盘
 
 ![image-20260420](https://cdn.jsdelivr.net/gh/duanxueli08-cell/Obsidian-Images@main/img/image-20260417215408358.png)
 
 
 
-> 在 PE 系统打开该软件（所以需要准备两个硬盘，一个是系统盘，一个是空置盘），点击设置，进行无人值守自动化设置；
+> 在 PE 系统打开该软件（所以需要准备两个硬盘，一个是系统盘，一个是空置盘），接下来进行无人值守自动化参数调试；
+>
+> 再次打开封装软件，点击设置；至于系统路径，它会自动锚定！
 
 ![image-20260420](https://cdn.jsdelivr.net/gh/duanxueli08-cell/Obsidian-Images@main/img/image-20260417215640522.png)
 
@@ -142,21 +148,31 @@ A
 
 ### 第三步
 
-> 最关键的一步，得到最终的 WIM 文件
+> 这一步是生成 WIM 文件；
+>
+> 这里我少画了一个箭头，那就是——分区备份，这才是封装的最后一步；
+>
+> 而左边的——映像恢复，是将封装好的镜像生成系统；
 
 ![image-20260420](https://cdn.jsdelivr.net/gh/duanxueli08-cell/Obsidian-Images@main/img/image-20260417221401003.png)
 
 ![image-20260420](https://cdn.jsdelivr.net/gh/duanxueli08-cell/Obsidian-Images@main/img/image-20260417222644794.png)
 
+> 再次确定一下，没问题就——一键备份
+
 ![image-20260420](https://cdn.jsdelivr.net/gh/duanxueli08-cell/Obsidian-Images@main/img/image-20260417222825558.png)
 
 ![image-20260420](https://cdn.jsdelivr.net/gh/duanxueli08-cell/Obsidian-Images@main/img/image-20260417223000928.png)
+
+
+
+> 好了，静静的等着！听听风扇的呼啸吧！
 
 ![image-20260420](https://cdn.jsdelivr.net/gh/duanxueli08-cell/Obsidian-Images@main/img/image-20260417223137778.png)
 
 
 
-> 这一步封装需要的时间比较长，封装的系统盘越大，时间越长！所以我先干点别的事情。
+> 这一步封装需要的时间比较长，封装的系统盘越大，时间就越长！所以我先干点别的事情。
 
 ![image-20260420150315448](https://cdn.jsdelivr.net/gh/duanxueli08-cell/Obsidian-Images@main/img/image-20260420150315448.png))
 
@@ -307,18 +323,20 @@ winget
 
 ```powershell
 # 7z
-# clash
+# Clash
 # Python
 # git
 # Visual Studio Code
 # PotPlayer
-# localsend
+# localsend		# 局域网传输神器
 # sumatraPDF
-# bitwarden
+# Bitwarden		# 密码管理软件
 # 微信输入法
 # ContextMenuManager
 # XtraToolsPortable
 # Foxmail
+# notepad--		# 或者 notepad++ 也行！
+# Typora
 ```
 
 
@@ -337,11 +355,12 @@ winget
 
 
 ```powershell
+# EVC			# 一个便捷的录屏软件
 # UU远程
-# WindTerm
+# WindTerm		# 远程连接工具
 # AOMEIBackupper
 # 火狐浏览器
-# ventoy
+# ventoy		# 制作系统盘的神器
 # 语雀
 # WPS （专业改良版）
 # 夸克云盘
@@ -350,8 +369,9 @@ winget
 # CE修改器
 # Telegram
 # BiliTools
-# Snipaste
+# Snipaste		# 截屏软件
 # SwitchHosts （如果不干运维，估计 forever 用不上了！）
+# Game Cheats Manager
 ```
 
 
