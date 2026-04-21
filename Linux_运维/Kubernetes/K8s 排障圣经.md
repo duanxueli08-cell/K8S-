@@ -13,17 +13,17 @@
 
 核心排障路径总结（按出现频率排序）
 
-| 排名 | 问题类型                 | 典型现象                                    | 图中对应位置                   | 一句话解决思路                                               |
-| ---- | ------------------------ | ------------------------------------------- | ------------------------------ | ------------------------------------------------------------ |
-| 1    | 镜像拉取失败             | ImagePullBackOff / ErrImagePull             | 中间靠左                       | 检查镜像名、Tag、私有仓库 secret、是否拼错                   |
-| 2    | 资源超限                 | OOMKilled、Pending                          | 上半部分 ResourceQuota 节点    | 看 limits/requests 是否配错、节点资源是否耗尽                |
-| 3    | 存活/就绪探针失败        | CrashLoopBackOff、容器反复重启              | 中间偏右探针部分               | liveness/readiness probe 配置太严格或路径错                  |
-| 4    | PVC 挂载失败             | Pending 很久起不来                          | 上半部分 PersistentVolumeClaim | 检查 StorageClass、PV 是否存在、权限                         |
-| 5    | 调度失败（节点选不出来） | Pending                                     | 最上面调度部分                 | kubectl describe pod 看 Events（taint、affinity、节点资源不足） |
-| 6    | 容器主进程退出           | CrashLoopBackOff、Exited(1)                 | 右下角 RunContainerError       | 查看日志，看业务代码是否启动就退                             |
-| 7    | Service 选不到 Pod       | Service 有 Endpoint 但访问不通或无 Endpoint | 右下角 Service 部分            | 检查 selector 是否匹配 Pod 的 labels                         |
-| 8    | Ingress 404 / 不通       | Pod 正常但域名访问不到                      | 左下角 Ingress 部分            | 检查 host、path、ingress-class、ingress-controller 是否正常  |
-| 9    | 端口映射错               | 能 curl ClusterIP 但外部访问不行            | 最底部 port-forward 那几步     | containerPort、targetPort、nodePort 是否对齐                 |
+| 排名  | 问题类型             | 典型现象                                | 图中对应位置                     | 一句话解决思路                                              |
+| --- | ---------------- | ----------------------------------- | -------------------------- | ---------------------------------------------------- |
+| 1   | 镜像拉取失败           | ImagePullBackOff / ErrImagePull     | 中间靠左                       | 检查镜像名、Tag、私有仓库 secret、是否拼错                           |
+| 2   | 资源超限             | OOMKilled、Pending                   | 上半部分 ResourceQuota 节点      | 看 limits/requests 是否配错、节点资源是否耗尽                      |
+| 3   | 存活/就绪探针失败        | CrashLoopBackOff、容器反复重启             | 中间偏右探针部分                   | liveness/readiness probe 配置太严格或路径错                   |
+| 4   | PVC 挂载失败         | Pending 很久起不来                       | 上半部分 PersistentVolumeClaim | 检查 StorageClass、PV 是否存在、权限                           |
+| 5   | 调度失败（节点选不出来）     | Pending                             | 最上面调度部分                    | kubectl describe pod 看 Events（taint、affinity、节点资源不足） |
+| 6   | 容器主进程退出          | CrashLoopBackOff、Exited(1)          | 右下角 RunContainerError      | 查看日志，看业务代码是否启动就退                                     |
+| 7   | Service 选不到 Pod  | Service 有 Endpoint 但访问不通或无 Endpoint | 右下角 Service 部分             | 检查 selector 是否匹配 Pod 的 labels                        |
+| 8   | Ingress 404 / 不通 | Pod 正常但域名访问不到                       | 左下角 Ingress 部分             | 检查 host、path、ingress-class、ingress-controller 是否正常   |
+| 9   | 端口映射错            | 能 curl ClusterIP 但外部访问不行            | 最底部 port-forward 那几步       | containerPort、targetPort、nodePort 是否对齐               |
 
 这张图的真正价值
 
